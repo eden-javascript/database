@@ -131,6 +131,29 @@ status를 입력하여 utf8로 변경됨을 확인할 수 있다.
 
 [맥 docker에 mysql 설치 & character set 설정 locale 설정](https://velog.io/@kyukim/docker-mysql)
 
+![image](https://user-images.githubusercontent.com/58525009/152855189-eeec4015-8ae8-480a-ad29-394cd4560541.png)
+
+맨 끝에는 password를 입력한다.
+
+![image](https://user-images.githubusercontent.com/58525009/152855243-6d788d47-d6ed-421c-b756-9c70429af654.png)
+
+![image](https://user-images.githubusercontent.com/58525009/152855290-7a05fd5d-aae8-4ff4-a4f8-a4525dab8094.png)
+
+![image](https://user-images.githubusercontent.com/58525009/152855325-bab2f55e-2828-4c1d-8a33-10897efc89ac.png)
+
+![image](https://user-images.githubusercontent.com/58525009/152855356-44beed35-3348-4086-9df0-839dc4c8a10e.png)
+
+```
+cd /etc/mysql/mysql.conf.d
+```
+
+```
+# bind-adress=127.0.0.1
+```
+
+mysql.conf.d에 접근하여 mysqld.cnf에서 위와 같이 주소를 주석처리하고 새로운 컨테이너 run할때에 8080:3306으로 하였지만 원격접속이 되지 않아서 local host로 진행하였다.
+포트포워딩 하는 법을 더 찾아봐야겠지만 시간이 너무 오래걸려서 추후 과제로 남겼다.
+
 ### 추가할 사항
 
-docker 컨테이너를 삭제하면 데이터 베이스도 함께 삭제될 수 있어서 따로 설정을 해준다.
+- 포트포워딩
