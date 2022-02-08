@@ -135,7 +135,7 @@ status를 입력하여 utf8로 변경됨을 확인할 수 있다.
 
 맨 끝에는 password를 입력한다.
 
-![image](https://user-images.githubusercontent.com/58525009/152855243-6d788d47-d6ed-421c-b756-9c70429af654.png)
+![image](https://user-images.githubusercontent.com/58525009/153007640-a939ebe5-052a-4795-9e7d-55fab36b298a.png)
 
 ![image](https://user-images.githubusercontent.com/58525009/152855290-7a05fd5d-aae8-4ff4-a4f8-a4525dab8094.png)
 
@@ -153,6 +153,36 @@ cd /etc/mysql/mysql.conf.d
 
 mysql.conf.d에 접근하여 mysqld.cnf에서 위와 같이 주소를 주석처리하고 새로운 컨테이너 run할때에 8080:3306으로 하였지만 원격접속이 되지 않아서 local host로 진행하였다.
 포트포워딩 하는 법을 더 찾아봐야겠지만 시간이 너무 오래걸려서 추후 과제로 남겼다.
+
+### goorm IDE mysql 세팅후 원격접속
+
+데이터 베이스에 접속한다.
+
+```
+use mysql;
+```
+
+이후 docker에서 한것처럼 user를 생성하고 접속권한을 설정한다.
+
+mysql을 재시작한다.
+
+![image](https://user-images.githubusercontent.com/58525009/152924440-a8e8507a-597f-4d3a-b6a5-1116093b1990.png)
+
+포트포워딩 설정을 찾아서 클릭한다.
+
+![image](https://user-images.githubusercontent.com/58525009/152924561-7f9e61d4-6b96-4bee-b174-7f155ea35561.png)
+
+등록을 누르면 다음과 같이 설정된 ip, 외부 포트등을 확인할 수 있다. 이 ip와 외부 포트로 원격 접속한다.
+
+![image](https://user-images.githubusercontent.com/58525009/152924638-d0ddc5db-f671-40a0-ab9f-1676dd9138c8.png)
+
+ip와 포트는 포트포워딩 설정한 ip와 외부포트를 입력한다.
+
+![image](https://user-images.githubusercontent.com/58525009/152924776-f9399973-684b-49cd-b380-3bae0253c23f.png)
+
+원격 접속을 확인할 수 있다.
+
+![image](https://user-images.githubusercontent.com/58525009/152924873-b9e2cdf7-97e7-45f6-9b7e-17fe7af73165.png)
 
 ### 추가할 사항
 
